@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Удаление</title>
+</head>
+<body>
+<div class="container">
+    <h2>Удаление</h2>
+    <br>
+    <form method="post">
+        <div class="container">
+            <p>Вы уверены, что хотите удалить?</p>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">model</th>
+                    <th scope="col">company</th>
+                    <th scope="col">cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a th:utext="${id+1}"></a></td>
+                    <td><a th:utext="${electronic.getNameModel()}"></a></td>
+                    <td><a th:utext="${electronic.getNameCompany()}"></a></td>
+                    <td><a th:text="${electronic.getCost()}"></a></td>
+                </tr>
+                </tbody>
+                <a class="btn btn-primary" href="/" role="button">Отменить</a>
+                <button type="submit" class="btn btn-outline-secondary">Удалить</button>
+            </table>
+        </div>
+    </form>
+</div>
+</body>
+</html>

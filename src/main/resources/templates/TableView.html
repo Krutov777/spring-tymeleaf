@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Магазин электроники</title>
+</head>
+<body>
+<div class="container">
+    <h2>Список Электроники</h2>
+    <p>Магазин электроники</p>
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">model</th>
+            <th scope="col">company</th>
+            <th scope="col">cost</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <div th:each="electronic : ${electronics}">
+            <tr>
+                <td><a th:utext="${electronics.indexOf(electronic)+1}"></a></td>
+                <td><a th:utext="${electronic.getNameModel()}"></a></td>
+                <td><a th:utext="${electronic.getNameCompany()}"></a></td>
+                <td><a th:text="${electronic.getCost()}"></a></td>
+                <td><a th:href="${electronics.indexOf(electronic)}+'/edit'">Изменить</a>
+                    <a th:href="${electronics.indexOf(electronic)}+'/delete'">Удалить</a>
+                </td>
+            </tr>
+        </div>
+        </tbody>
+        <a class="btn btn-outline-secondary" href="add" role="button">Добавить электронику</a>
+    </table>
+</div>
+</body>
+</html>
