@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Error</title>
+    <title th:text="#{error}">Error</title>
 </head>
 <body>
-<h2>Ошибка ввода</h2>
+<h2 th:text="#{error}">Ошибка</h2>
 </body>
 </html>

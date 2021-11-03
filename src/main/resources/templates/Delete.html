@@ -1,25 +1,26 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Удаление</title>
+    <title th:text="#{delete}">Удаление</title>
 </head>
 <body>
 <div class="container">
-    <h2>Удаление</h2>
+    <h2 th:text="#{delete}">Удаление</h2>
     <br>
     <form method="post">
         <div class="container">
-            <p>Вы уверены, что хотите удалить?</p>
+            <p th:text="#{delete.question}">Вы уверены, что хотите удалить?</p>
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">model</th>
-                    <th scope="col">company</th>
-                    <th scope="col">cost</th>
+                    <th scope="col" th:text="#{model}">model</th>
+                    <th scope="col" th:text="#{company}">company</th>
+                    <th scope="col" th:text="#{cost}">cost</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,8 +31,8 @@
                     <td><a th:text="${electronic.getCost()}"></a></td>
                 </tr>
                 </tbody>
-                <a class="btn btn-primary" href="/" role="button">Отменить</a>
-                <button type="submit" class="btn btn-outline-secondary">Удалить</button>
+                <a class="btn btn-primary" href="/" role="button" th:text="#{cancel}">Отменить</a>
+                <button type="submit" class="btn btn-outline-secondary" th:text="#{delete}">Удалить</button>
             </table>
         </div>
     </form>

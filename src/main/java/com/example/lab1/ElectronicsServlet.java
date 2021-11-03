@@ -1,11 +1,15 @@
 package com.example.lab1;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 @Controller
 public class ElectronicsServlet {
@@ -60,4 +64,12 @@ public class ElectronicsServlet {
         electronics.remove(id);
         return "redirect:/";
     }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale(Locale.US);
+        return sessionLocaleResolver;
+    }
+
 }
